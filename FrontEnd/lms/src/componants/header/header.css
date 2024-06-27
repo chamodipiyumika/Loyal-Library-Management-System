@@ -1,13 +1,18 @@
-.header{
+.header {
     padding: 20px;
     margin: 0px;
-    background-color :rgb(247, 44, 44);
+    background-color: rgb(247, 44, 44);
     position: fixed;
     top: 0;
     width: 100%;
 }
-.headerlogo{
-    align-items: left;
-    width: 10px;
-    height: 10px;
+
+.headerlogo {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.headerlogo img {
+    width: 100%; /* Make the image take up the full width of the container */
+    height: auto; /* Maintain aspect ratio */
 }

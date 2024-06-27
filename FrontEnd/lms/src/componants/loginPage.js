@@ -1,6 +1,6 @@
 import React from "react";
-import FunctionalComHead from './componants/header/header';
-import FunctionalComFooter from './componants/footer/footer';
+import FunctionalComHead from './header/header';
+import FunctionalComFooter from './footer/footer';
 
 function FunctionalComLogin(){
     return(
