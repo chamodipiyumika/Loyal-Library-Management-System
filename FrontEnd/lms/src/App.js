@@ -1,11 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import  footerComponants from './componants/flooter';
+
+import FunctionalComLogin from './componants/loginPage';
 
 function App() {
   return (
     <div>
-      < footerComponants />
+      <FunctionalComHead />
+      <FunctionalComFooter />
+      <FunctionalComLogin />
     </div>
   );
 }
