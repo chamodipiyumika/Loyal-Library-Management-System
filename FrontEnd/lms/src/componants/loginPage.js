@@ -3,11 +3,13 @@ import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/loginpage.css';
 function FunctionalComLogin() {
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The name you entered was: ${name}`);
+    alert(`The email you entered was: ${email}`)
+    alert(`The password you entered was: ${password}`);
   }
 
   return (
@@ -15,14 +17,25 @@ function FunctionalComLogin() {
       <FunctionalComHead />
       <div className="loginform" >
         <form onSubmit={handleSubmit} >
-          <label>Enter your name:
+            <div className = "form">
+          <label>Email:
             <input 
               type="text" 
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               style={{ display: 'block', margin: '10px 0' }}
             />
           </label>
+         
+          <label>Password:
+            <input 
+              type="pw" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ display: 'block', margin: '10px 0' }}
+            />
+          </label>
+          </div>
           <input type="submit"  />
         </form>
       </div>

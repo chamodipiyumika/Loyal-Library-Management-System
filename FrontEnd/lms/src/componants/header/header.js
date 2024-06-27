@@ -8,6 +8,9 @@ function FunctionalComHead(){
            <div className ="headerlogo">
              <img src={logo} alt="logo" />
            </div>
+           <div className ="topic">
+               <h2>Loyal Library Management System</h2>
+           </div>
         </div>
     );
 }

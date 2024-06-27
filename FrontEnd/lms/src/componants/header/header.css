@@ -1,7 +1,7 @@
 .header {
     padding: 10px;
     margin: 0px;
-    background-color: rgb(247, 44, 44);
+    background-color: black;
     position: fixed;
     top: 0;
     width: 100%;
@@ -15,4 +15,14 @@
 .headerlogo img {
     width: 100%; 
     height: auto; 
+}
+.topic{
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    
 }
