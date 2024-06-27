@@ -6,7 +6,7 @@ function FunctionalComLogin(){
     return(
         <div>
             <FunctionalComHead />
-            <h1>login</h1>
+            <h1>login page</h1>
             <FunctionalComFooter />
         </div>  
     );
