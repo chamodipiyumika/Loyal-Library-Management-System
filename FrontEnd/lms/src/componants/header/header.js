@@ -4,7 +4,7 @@ import logo from './logo.png';
 
 function FunctionalComHead(){
     return(
-        <div className = "header">
+        <div className = " header ">
            <div className ="headerlogo">
              <img src={logo} alt="logo" />
            </div>

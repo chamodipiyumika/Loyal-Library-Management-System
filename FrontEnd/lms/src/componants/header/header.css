@@ -1,13 +1,18 @@
-.header{
-    padding: 20px;
+.header {
+    padding: 10px;
     margin: 0px;
-    background-color :rgb(247, 44, 44);
+    background-color: rgb(247, 44, 44);
     position: fixed;
     top: 0;
     width: 100%;
 }
-.headerlogo{
-    align-items: left;
-    width: 10px;
-    height: 10px;
+
+.headerlogo {
+    width: 100px;
+    height: auto;
+}
+
+.headerlogo img {
+    width: 100%; 
+    height: auto; 
 }
