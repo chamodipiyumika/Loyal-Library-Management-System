@@ -8,11 +8,11 @@
 }
 
 .headerlogo {
-    width: 100px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px;
+    height: auto;
 }
 
 .headerlogo img {
-    width: 100%; /* Make the image take up the full width of the container */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; 
+    height: auto; 
 }
