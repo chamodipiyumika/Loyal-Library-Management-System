@@ -1,5 +1,4 @@
 import './App.css';
-
 import FunctionalComLogin from './componants/loginPage';
 
 function App() {
