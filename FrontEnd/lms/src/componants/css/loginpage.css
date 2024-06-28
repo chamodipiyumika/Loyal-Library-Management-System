@@ -1,10 +1,63 @@
+.loginform{
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10% 40% 10% 35%;
+    width: 340px;
+    height: 450px;
+    align-items:center;
+    text-align: center;
+
+}
 .loginform form{
-    background-color: aqua;
-    padding-top: 100px;
+    width: 600px;
+    padding-top: 10px;
+    padding-right: 50px;
+    align-items: center;
+    display: flex;
 }
-.form{
-    background-color: antiquewhite;
-    width: 50%;
-    height: 50%;
-   
+.formpage{
+    background-color: rgba(167, 166, 165, 0.719);
+    align-items: center;
+    display: flex;
+    width: 400px;
+    height: 60vh;
+    border-radius: 20px;
+  
 }
+.h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 20px;
+    padding-left: 150px;
+    text-align: center;
+    position: fixed;
+
+}
+.labels{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    padding-left: 50px;
+}
+input[type="text"], input[type="pw"]{
+    width: 300px;
+    padding:10px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.submit{
+    padding: 5px 20px 5px 20px;
+    font-size:15px;
+    border-radius: 10px;
+    color:whitesmoke;
+    background-color:rgb(5, 41, 247);
+    text-align: left;
+    margin-top: 250px;
+}
+.submit:hover{
+    background-color: darkblue;
+}
+
