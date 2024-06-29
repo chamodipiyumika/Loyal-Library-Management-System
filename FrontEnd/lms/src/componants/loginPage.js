@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/loginpage.css';
@@ -25,29 +26,29 @@ function FunctionalComLogin() {
         <h1 className ="h1">Login Page</h1>
 
           <div className="labels">
-          <label>Email:
+          <label>Email:</label>
             <input 
               type="text"  name="email" placeholder="Enter your email.."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              style={{ display: 'block', margin: '10px 0' }}
+              
             />
-          </label>
+          
          
-          <label>Password:
+          <label>Password:</label>
             <input 
               type="pw" name="password" placeholder="Enter your password.."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              style={{ display: 'block', margin: '10px 0' }}
+             
             />
-          </label>
+          
           </div>
-          <div className ="p1">
-            <p>Forgot password</p>
+          <div className="p1">
+              <Link to="/restore-password">Forgot password</Link>
+            </div>
           </div>
-          </div>
-          <div>
+          <div class="btn">
           <input className="submit" type="submit"/>
          </div>
           

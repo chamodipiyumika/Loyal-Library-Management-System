@@ -3,7 +3,7 @@ import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/resetpwPage.css';
 function FunctionalComReset() {
-  const [userid, setUserid] = useState("");
+  const [userid, setEmail] = useState("");
  
   const handleSearch = (event) => {
     event.preventDefault();

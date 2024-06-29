@@ -39,14 +39,21 @@
     width:300px;
     margin-bottom: 20px;
 }
-input[type="text"], input[type="pw"]{
+.loginform input[type="text"], input[type="pw"]{
     width: calc(100%-22px);
     padding:10px 60px;
     margin: 10px 0;
     box-sizing: border-box;
     border: 1px solid #6e6c6c96;
     border-radius: 10px;
+    display: 'block';
+    margin: '10px 0';
 }
+
+.btn{
+    padding-top: 10px;
+}
+
 .p1{
     font-size: 10px;
     color: blue;
