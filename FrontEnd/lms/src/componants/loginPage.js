@@ -12,14 +12,18 @@ function FunctionalComLogin() {
   }
 
   return (
-    <div>
+    <div className ="card-container">
       <FunctionalComHead />
+     
     
       <div className="loginform" >
-      <h1 className ="h1">Login Page</h1>
+     
         <form onSubmit={handleSubmit} >
-
         <div className="formpage">
+        
+         
+        <h1 className ="h1">Login Page</h1>
+
           <div className="labels">
           <label>Email:
             <input 
@@ -39,10 +43,20 @@ function FunctionalComLogin() {
             />
           </label>
           </div>
+          <div className ="p1">
+            <p>Forgot password</p>
           </div>
+          </div>
+          <div>
           <input className="submit" type="submit"/>
+         </div>
+          
+          <div className="p2">
+            <p>Don't have an account? click here to register</p>
+          </div>
         </form>
       </div>
+      
 
       <FunctionalComFooter />
     </div>  
