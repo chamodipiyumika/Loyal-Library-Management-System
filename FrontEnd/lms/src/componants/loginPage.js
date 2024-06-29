@@ -8,19 +8,26 @@ function FunctionalComLogin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The email you entered was: ${email}`)
-    alert(`The password you entered was: ${password}`);
+    alert(`The email you entered was: ${email} ${password}`)
   }
 
   return (
-    <div>
+    <div className ="card-container">
       <FunctionalComHead />
+     
+    
       <div className="loginform" >
+     
         <form onSubmit={handleSubmit} >
-            <div className = "form">
+        <div className="formpage">
+        
+         
+        <h1 className ="h1">Login Page</h1>
+
+          <div className="labels">
           <label>Email:
             <input 
-              type="text" 
+              type="text"  name="email" placeholder="Enter your email.."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={{ display: 'block', margin: '10px 0' }}
@@ -29,16 +36,28 @@ function FunctionalComLogin() {
          
           <label>Password:
             <input 
-              type="pw" 
+              type="pw" name="password" placeholder="Enter your password.."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               style={{ display: 'block', margin: '10px 0' }}
             />
           </label>
           </div>
-          <input type="submit"  />
+          <div className ="p1">
+            <p>Forgot password</p>
+          </div>
+          </div>
+          <div>
+          <input className="submit" type="submit"/>
+         </div>
+          
+          <div className="p2">
+            <p>Don't have an account? click here to register</p>
+          </div>
         </form>
       </div>
+      
+
       <FunctionalComFooter />
     </div>  
   );
