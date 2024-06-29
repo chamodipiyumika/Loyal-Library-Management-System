@@ -1,30 +1,30 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
-import './css/loginpage.css';
+import './css/registerPage.css';
 
-function FunctionalComLogin() {
+function FunctionalComReg() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [ConPassword, setConPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The email you entered was: ${email} ${password}`)
+    alert(`The email you entered was: ${email} ${password} ${phone}`)
   }
 
   return (
     <div className ="card-container">
       <FunctionalComHead />
      
-    
       <div className="loginform" >
      
         <form onSubmit={handleSubmit} >
         <div className="formpage">
-        
-         
-        <h1 className ="h1">Login Page</h1>
+          
+        <h1 className ="h1">Register Page</h1>
 
           <div className="labels">
           <label>Email:</label>
@@ -35,27 +35,33 @@ function FunctionalComLogin() {
               
             />
           
-         
           <label>Password:</label>
             <input 
               type="pw" name="password" placeholder="Enter your password.."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-             
+            />
+
+         <label>Confirm Password:</label>
+            <input 
+              type="pw" name="ConPassword" placeholder="Confirm your password.."
+              value={ConPassword}
+              onChange={(e) => setConPassword(e.target.value)}
+            />
+
+          <label>Phone Number:</label>
+            <input 
+              type="text" name="phone" placeholder="Enter your phone number.."
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
           
           </div>
-          <div className="p1">
-              <Link to="/restore-password">Forgot password</Link>
-            </div>
+         
           </div>
           <div class="btn">
           <input className="submit" type="submit"/>
          </div>
-          
-          <div className="p2">
-            <p>Don't have an account?<spam><Link to="/goto-Register"> Click here to register</Link></spam></p>
-          </div>
         </form>
       </div>
       
@@ -65,4 +71,4 @@ function FunctionalComLogin() {
   );
 }
 
-export default FunctionalComLogin;
+export default FunctionalComReg;

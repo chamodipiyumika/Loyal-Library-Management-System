@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/resetpwPage.css';
+
 function FunctionalComReset() {
-  const [userid, setEmail] = useState("");
+  const [userid, setUserid] = useState("");
  
   const handleSearch = (event) => {
     event.preventDefault();
@@ -22,7 +24,7 @@ function FunctionalComReset() {
                  <p>To reset your password, pease enter your UserId below..</p>
               </div>
            <div>
-            <h2>Search by UserId</h2>
+            <h3>Search by UserId</h3>
            </div>
 
           <div className="label">
@@ -30,18 +32,19 @@ function FunctionalComReset() {
             <input 
               type="text"  name="userid" placeholder="Enter your userid.."
               value={userid}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setUserid(e.target.value)}
               style={{ display: 'block', margin: '10px 0' }}
             />
           </label>
           </div>
           </div>
-          <div>
-          <input className="search" type="search"/>
+          <div class="btn">
+          <input className="submit" type="submit"/>
          </div>
           
           <div className="p2">
-            <p>Don't have an account? click here to register</p>
+            <p>Don't have an account? <spam><Link to="/goto-register"> 
+                         Click here to register</Link></spam></p>
           </div>
         </form>
       </div>
