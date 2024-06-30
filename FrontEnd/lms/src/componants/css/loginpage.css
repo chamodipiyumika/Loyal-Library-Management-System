@@ -1,27 +1,11 @@
-.card-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.loginform{
-    background-color: #ccc;
-    padding: 20px;
-    width: 400px;
-    text-align: center;
-    border-radius: 20px;
-
-}
 .formpage{
     background-color: rgba(167, 166, 165, 0.719);
     align-items: center;
     display: flex;
+    width: 350px;
+    height: 65vh;
     flex-direction: column;
-    padding: 20px;
+    padding-left: 30px;
     border-radius: 20px;
   
 }
@@ -41,7 +25,7 @@
 }
 .loginform input[type="text"], input[type="pw"]{
     width: calc(100%-22px);
-    padding:10px 60px;
+    padding:20px 60px;
     margin: 10px 0;
     box-sizing: border-box;
     border: 1px solid #6e6c6c96;
@@ -50,7 +34,7 @@
     margin: '10px 0';
 }
 .btn{
-    padding-top: 10px;
+    padding-top: 1px;
 }
 
 .p1{
@@ -67,13 +51,13 @@
 }
 .submit{
     padding:10px 20px;
-    font-size:15px;
+    font-size:12px;
     border-radius: 10px;
     color:whitesmoke;
     background-color:rgb(5, 41, 247);
     cursor:pointer;
 }
 .submit:hover{
-    background-color: darkblue;
+    background-color:darkblue;
 }
 

@@ -48,18 +48,16 @@ function FunctionalComLogin() {
           <div className="p1">
               <Link to="/restore-password">Forgot password</Link>
             </div>
+          <div className="p2">
+            <p>Don't have an account? <spam><Link to="/goto-register"> 
+                         Click here to register</Link></spam></p>
+          </div>
           </div>
           <div class="btn">
           <input className="submit" type="submit"/>
          </div>
-          
-          <div className="p2">
-            <p>Don't have an account?<spam><Link to="/goto-Register"> Click here to register</Link></spam></p>
-          </div>
         </form>
       </div>
-      
-
       <FunctionalComFooter />
     </div>  
   );

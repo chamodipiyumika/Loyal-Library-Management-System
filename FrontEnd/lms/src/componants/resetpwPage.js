@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/resetpwPage.css';
@@ -41,11 +40,6 @@ function FunctionalComReset() {
           <div class="btn">
           <input className="submit" type="submit"/>
          </div>
-          
-          <div className="p2">
-            <p>Don't have an account? <spam><Link to="/goto-register"> 
-                         Click here to register</Link></spam></p>
-          </div>
         </form>
       </div>
       
