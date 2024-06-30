@@ -14,19 +14,20 @@ function FunctionalComFooter() {
       <div className="footer-About">
         <h3>About Us</h3>
         <p>
-          Welcome to the Loyal Library Management System, your one-stop solution
-          for managing and accessing the school library's vast collection of
-          resources.
-        </p>
-        <p>
-          Our system is designed to make it easy for students, teachers, and
-          staff to find and borrow books, track due dates, and manage library
-          accounts with ease.
+          Welcome to the Loyal Library Management System, in this page,
         </p>
         <ul>
           <li>Search for books by title, author, or subject</li>
           <li>Check the availability of books and other resources</li>
         </ul>
+      </div>
+      <div className="footer-Form">
+        <h3>Login</h3>
+        <div className="footer-box">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit">Submit</button>
+        </div>
       </div>
     </div>
   );
