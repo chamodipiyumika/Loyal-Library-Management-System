@@ -11,6 +11,13 @@ function App() {
       <Routes>
         <Route path="/" element={<FunctionalComLogin />} />
         <Route path="/restore-password" element={<FunctionalComReset />} />
+
+
+
+
+
+        
+        
       </Routes>
     </Router>
       

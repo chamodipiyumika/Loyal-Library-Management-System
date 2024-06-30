@@ -3,7 +3,7 @@ import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/resetpwPage.css';
 function FunctionalComReset() {
-  const [userid, setEmail] = useState("");
+  const [userid, setUserid] = useState("");
  
   const handleSearch = (event) => {
     event.preventDefault();
@@ -30,7 +30,7 @@ function FunctionalComReset() {
             <input 
               type="text"  name="userid" placeholder="Enter your userid.."
               value={userid}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setUserid(e.target.value)}
               style={{ display: 'block', margin: '10px 0' }}
             />
           </label>
