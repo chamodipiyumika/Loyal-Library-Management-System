@@ -1,14 +1,14 @@
 import { useState } from "react";
 import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
-import './css/resetpwPage.css';
+import './css/Otp.css';
 
-function FunctionalComReset() {
-  const [userid, setUserid] = useState("");
+function FunctionalComOTP() {
+  let history = useHistory();
  
   const handleSearch = (event) => {
     event.preventDefault();
-    alert(`The user id you entered was: ${userid}`)
+    history.push('/otp')
   }
 
   return (
@@ -18,20 +18,17 @@ function FunctionalComReset() {
       <div className="loginform" >
      
         <form onSearch={handleSearch} >
-           <div className="restPage">
-              <div className ="p1">
-                 <p>To reset your password, pease enter your UserId below..</p>
-              </div>
+           <div className="otpPage">
            <div>
-            <h3>Search by UserId</h3>
+            <h3>Please add your OTP</h3>
            </div>
 
           <div className="label">
-          <label>UserId:
+          <label>OTP:
             <input 
-              type="text"  name="userid" placeholder="Enter your userid.."
-              value={userid}
-              onChange={(e) => setUserid(e.target.value)}
+              type="text"  name="otp" placeholder="Enter your OTP.."
+              value={otp}
+              onChange={(e) => setOTP(e.target.value)}
               style={{ display: 'block', margin: '10px 0' }}
             />
           </label>
@@ -49,4 +46,4 @@ function FunctionalComReset() {
   );
 }
 
-export default FunctionalComReset;
+export default FunctionalComOTP;

@@ -1,4 +1,3 @@
-
 .card-container{
     display: flex;
     justify-content: center;
@@ -8,36 +7,49 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
 }
 .loginform{
     background-color: #ccc;
     padding: 20px;
     width: 400px;
-    height: 45vh;
     text-align: center;
     border-radius: 20px;
 
-}.p1{
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
+}
+.formpage{
+    background-color: rgba(167, 166, 165, 0.719);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+  
 }
 .label{
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: large;
     text-align: left;
-    padding: 20px;
+    width:300px;
+    margin-bottom: 20px;
 }
-.search{
-    padding:10px 10px;
-    font-size:10px;
+.h3{
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+    color:black;
+    text-align: center;
+
+}
+.btn{
+    padding-top: 10px;
+}
+.submit{
+    padding:10px 20px;
+    font-size:15px;
     border-radius: 10px;
-    color:rgb(8, 7, 7);
+    color:whitesmoke;
     background-color:rgb(5, 41, 247);
     cursor:pointer;
 }
-.search:hover{
+.submit:hover{
     background-color: darkblue;
 }

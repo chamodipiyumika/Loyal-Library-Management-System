@@ -6,3 +6,36 @@
     bottom: 0;
     width: 100%;
 }
+.footer-Contact{
+    color:white;
+    width: 150px;
+}
+.footer-Contact h3{
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.footer-Contact p{
+    margin: 5px 0;
+    font-size: 14px;
+}
+.footer-About{
+    color:white;
+    width: 150px;
+}
+.footer-About h3{
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.footer-About p{
+    margin: 5px 0;
+    font-size: 14px;
+}
+.footer-About ul{
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.footer-About ul li{
+    margin: 5px 0;
+    font-size: 14px;
+    color: aqua;
+}
