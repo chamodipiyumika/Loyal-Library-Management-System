@@ -4,11 +4,12 @@ import FunctionalComFooter from './footer/footer';
 import './css/Otp.css';
 
 function FunctionalComOTP() {
-  let history = useHistory();
+
+  const [otp, setOtp] = useState("");
  
-  const handleSearch = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    history.push('/otp')
+    alert(`The otp you entered was: ${otp} `)
   }
 
   return (
@@ -17,7 +18,7 @@ function FunctionalComOTP() {
      
       <div className="loginform" >
      
-        <form onSearch={handleSearch} >
+        <form onSubmit={handleSubmit} >
            <div className="otpPage">
            <div>
             <h3>Please add your OTP</h3>
@@ -28,13 +29,13 @@ function FunctionalComOTP() {
             <input 
               type="text"  name="otp" placeholder="Enter your OTP.."
               value={otp}
-              onChange={(e) => setOTP(e.target.value)}
+              onChange={(e) => setOtp(e.target.value)}
               style={{ display: 'block', margin: '10px 0' }}
             />
           </label>
           </div>
           </div>
-          <div class="btn">
+          <div className="btn">
           <input className="submit" type="submit"/>
          </div>
         </form>

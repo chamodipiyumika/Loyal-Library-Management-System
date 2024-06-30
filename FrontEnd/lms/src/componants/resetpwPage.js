@@ -37,7 +37,7 @@ function FunctionalComReset() {
           </label>
           </div>
           </div>
-          <div class="btn">
+          <div className="btn">
           <input className="submit" type="submit"/>
          </div>
         </form>
