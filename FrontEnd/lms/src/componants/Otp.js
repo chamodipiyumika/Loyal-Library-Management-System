@@ -19,7 +19,7 @@ function FunctionalComOTP() {
       <div className="loginform" >
      
         <form onSubmit={handleSubmit} >
-           <div className="otpPage">
+           <div className=" otpPage">
            <div>
             <h3>Please add your OTP</h3>
            </div>

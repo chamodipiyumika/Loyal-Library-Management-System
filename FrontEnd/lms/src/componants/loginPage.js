@@ -15,6 +15,7 @@ function FunctionalComLogin() {
 
   return (
     <div className ="card-container">
+      <div className="content-wrap">
       <FunctionalComHead />
      
     
@@ -35,7 +36,6 @@ function FunctionalComLogin() {
               
             />
           
-         
           <label>Password:</label>
             <input 
               type="pw" name="password" placeholder="Enter your password.."
@@ -51,16 +51,19 @@ function FunctionalComLogin() {
 
 
           <div className="p2">
-            <p>Don't have an account? <span><Link to="/goto-register"> Click here to register</Link></span></p>
+            <p>Don't have an account? <span><Link to="/goto-register">Click here to register</Link></span></p>
           </div>
           </div>
           <div className="btn">
           <input className="submit" type="submit"/>
          </div>
+         
         </form>
-      </div>
+        </div>
+        </div> 
       <FunctionalComFooter />
-    </div>  
+     
+    </div>
   );
 }
 
