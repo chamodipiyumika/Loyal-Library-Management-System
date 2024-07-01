@@ -19,7 +19,7 @@ function FunctionalComReg() {
     <div className ="card-container">
       <FunctionalComHead />
      
-      <div className="loginform" >
+      <div className="content-wrap" >
      
         <form onSubmit={handleSubmit} >
         <div className="formpage">
@@ -37,14 +37,16 @@ function FunctionalComReg() {
           
           <label>Password:</label>
             <input 
-              type="pw" name="password" placeholder="Enter your password.."
+             type="password"
+             name="password"
+             placeholder="Enter your password.."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
 
          <label>Confirm Password:</label>
             <input 
-              type="pw" name="ConPassword" placeholder="Confirm your password.."
+             type="password" name="ConPassword" placeholder="Confirm your password.."
               value={ConPassword}
               onChange={(e) => setConPassword(e.target.value)}
             />
@@ -57,11 +59,11 @@ function FunctionalComReg() {
             />
           
           </div>
-         
+          <div className="btn">
+                <input className="submit" type="submit" />
+              </div>
           </div>
-          <div class="btn">
-          <input className="submit" type="submit"/>
-         </div>
+          
         </form>
       </div>
       

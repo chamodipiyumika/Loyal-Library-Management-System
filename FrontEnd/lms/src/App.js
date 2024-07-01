@@ -4,6 +4,8 @@ import FunctionalComLogin from './componants/loginPage';
 import FunctionalComReset from './componants/resetpwPage';
 import FunctionalComReg from './componants/registerPage';
 import FunctionalComOTP from './componants/Otp';
+import FunctionalComOpassword from './componants/password';
+import FunctionalComPassword from "./componants/password";
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
         <Route path="/restore-password" element={<FunctionalComReset />} />
         <Route path="/goto-register" element={<FunctionalComReg />} />
         <Route path="/otp" element={<FunctionalComOTP />} />
+        <Route path="/passwordpage" element={<FunctionalComPassword />} />
       </Routes>
     </Router>
       

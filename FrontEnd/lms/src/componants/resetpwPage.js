@@ -1,52 +1,51 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/resetpwPage.css';
 
-function FunctionalComReset() {
-  const [userid, setUserid] = useState("");
- 
-  const handleSearch = (event) => {
+function FunctionalComLogin() {
+  const [uid, setUid] = useState("");
+
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The user id you entered was: ${userid}`)
+    alert(`The email you entered was: ${uid} `);
   }
 
   return (
-    <div className ="card-container">
+    <div className="prp_card-container1">
       <FunctionalComHead />
-     
-      <div className="loginform" >
-     
-        <form onSearch={handleSearch} >
-           <div className="restPage">
-              <div className ="p1">
-                 <p>To reset your password, pease enter your UserId below..</p>
+      <div className="prp_content-wrap">
+        <div className="prp_loginform">
+          <form onSubmit={handleSubmit}>
+            <div className="prp_formpage">
+              <p class="prp_p1">To reset password enter your user id</p>
+              <h1 className="prp_h1">Reset password </h1>
+              
+              <div className="prp_labels">
+                <label>UserId:</label>
+                <input
+                  type="text"
+                  name="uid"
+                  placeholder="Enter your user id.."
+                  value={uid}
+                  onChange={(e) => setUid(e.target.value)}
+                />
+                
               </div>
-           <div>
-            <h3>Search by UserId</h3>
-           </div>
-
-          <div className="label">
-          <label>UserId:
-            <input 
-              type="text"  name="userid" placeholder="Enter your userid.."
-              value={userid}
-              onChange={(e) => setUserid(e.target.value)}
-              style={{ display: 'block', margin: '10px 0' }}
-            />
-          </label>
-          </div>
-          </div>
-          <div className="btn">
-          <input className="submit" type="submit"/>
-         </div>
-        </form>
+             
+              
+              <div className="btn">
+                <input className="submit" type="submit" />
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-      
-
       <FunctionalComFooter />
-    </div>  
+    </div>
   );
 }
 
-export default FunctionalComReset;
+export default FunctionalComLogin;
