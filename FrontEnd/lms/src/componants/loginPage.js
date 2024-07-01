@@ -47,9 +47,11 @@ function FunctionalComLogin() {
           </div>
           <div className="p1">
               <Link to="/restore-password">Forgot password</Link>
-            </div>
+          </div>
+
+
           <div className="p2">
-            <p>Don't have an account? <Link to="/goto-register"> Click here to register</Link></p>
+            <p>Don't have an account? <span><Link to="/goto-register"> Click here to register</Link></span></p>
           </div>
           </div>
           <div className="btn">
