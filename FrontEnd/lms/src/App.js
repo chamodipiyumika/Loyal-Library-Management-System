@@ -6,6 +6,8 @@ import FunctionalComReg from './componants/registerPage';
 import FunctionalComOTP from './componants/Otp';
 import FunctionalCombook from './componants/bookPage';
 import FunctionalComPassword from "./componants/password";
+import FunctionalComAdmin from './componants/adminPage';
+import FunctionalComAddBook from "./componants/addNewBook";
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path="/otp" element={<FunctionalComOTP />} />
         <Route path="/passwordpage" element={<FunctionalComPassword />} />
         <Route path="/bookpage" element={<FunctionalCombook />} />
+        <Route path="/deleteUpdate" element={<FunctionalComAdmin />} />
+        <Route path="/addBook" element={<FunctionalComAddBook />} />
       </Routes>
     </Router>
       

@@ -4,7 +4,7 @@ import './css/bookPage.css';
 
 
 function FunctionalComBook() {
-    console.log("book page");
+
    const booksData = [
         { id: 1, title: 'Will in the World', author: 'Stephen Geenblat', copies: 10, status: 'Available' },
         { id: 2, title: 'Advanced Maths', author: 'Stanly J Farlow', copies: 4, status: 'Available' },
@@ -33,7 +33,9 @@ function FunctionalComBook() {
         placeholder="Search book by name"
         value={searchTerm}
         onChange={handleSearch}
+
       />
+      
       <table>
         <thead>
           <tr>

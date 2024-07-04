@@ -1,0 +1,63 @@
+.booksdata {
+    margin: 20px;
+}
+
+.booksdata h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #2c0674;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+th, td {
+    margin-left: auto;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #6c7ae0;
+}
+
+button1,button2,button3 {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+button1.del{
+    background-color:red;
+    color: white;
+}
+button2.up{
+    background-color:rgb(10, 199, 10);
+    color: white;
+}
+button3.add{
+    background-color: #0056b3;
+    color: white;
+}
+button1.del:hover {
+    background-color:rgb(167, 5, 5);
+}
+button2.up:hover {
+    background-color:green;
+}
+
+button3.add:hover {
+    background-color:rgb(9, 9, 109);
+}
+
