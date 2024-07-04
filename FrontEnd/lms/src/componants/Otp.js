@@ -1,50 +1,51 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/Otp.css';
 
-function FunctionalComOTP() {
-
+function FunctionalComLogin() {
   const [otp, setOtp] = useState("");
- 
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The otp you entered was: ${otp} `)
+    alert(`The otp you entered was: ${otp} `);
   }
 
   return (
-    <div className ="card-container">
+    <div className="otp_card-container1">
       <FunctionalComHead />
-     
-      <div className="loginform" >
-     
-        <form onSubmit={handleSubmit} >
-           <div className=" otpPage">
-           <div>
-            <h3>Please add your OTP</h3>
-           </div>
-
-          <div className="label">
-          <label>OTP:
-            <input 
-              type="text"  name="otp" placeholder="Enter your OTP.."
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              style={{ display: 'block', margin: '10px 0' }}
-            />
-          </label>
-          </div>
-          </div>
-          <div className="btn">
-          <input className="submit" type="submit"/>
-         </div>
-        </form>
+      <div className="otp_content-wrap">
+        <div className="otp_loginform">
+          <form onSubmit={handleSubmit}>
+            <div className="otp_formpage">
+              <p class="otp_p1">To reset password enter your otp check you regiserd email</p>
+              <h1 className="otp_h1">Otp verification </h1>
+              
+              <div className="otp_labels">
+                <label>Otp:</label>
+                <input
+                  type="text"
+                  name="otp"
+                  placeholder="Enter your user otp.."
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value)}
+                />
+                
+              </div>
+             
+              
+              <div className="btn">
+                <input className="submit" type="submit" />
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-      
-
       <FunctionalComFooter />
-    </div>  
+    </div>
   );
 }
 
-export default FunctionalComOTP;
+export default FunctionalComLogin;

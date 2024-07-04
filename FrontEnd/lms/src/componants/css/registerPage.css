@@ -1,72 +1,104 @@
-.card-container{
+
+
+.card-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
+   
+  }
+  
+  .content-wrap {
     background-image: url('background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-}
-.loginform{
-    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecf0f1;
     padding: 20px;
-    width: 400px;
-    height: 75vh;
-    text-align: center;
-    border-radius: 20px;
-
-}
-.loginform input[type="text"], input[type="pw"]{
-    width: calc(100%-22px);
-    padding:5px 60px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 1px solid #6e6c6c96;
-    border-radius: 10px;
-    display: 'block';
-}
-.formpage{
-    background-color: rgba(167, 166, 165, 0.719);
+    padding-top: 500xp;
+    flex: 1; /* Allows the content wrap to grow and push the footer down */
+  }
+  
+  .formpage {
+    background-color: rgba(255, 255, 255, 0.85);
     align-items: center;
     display: flex;
-    width: 350px;
-    height: 65vh;
+    width: 500px;
+    height: 500px;
     flex-direction: column;
-    padding-left: 30px;
+    padding: 30px;
+    padding-top: 50px;
     border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
   
-}
-.h1{
+  .formpage:hover {
+    transform: scale(1.05);
+  }
+  
+  .h1 {
     font-family: 'Times New Roman', Times, serif;
-    margin-top: 0px;
-    padding:0px;
-}
-.p1{
-    color:black;
+    margin-bottom: 20px;
+    color: #333;
     text-align: center;
-    font-size: 15px;
+    font-size: 24px;
+  }
+  
+  .labels {
+    font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
-}
-.labels{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
     text-align: left;
-    padding: 20px;
-}
-.btn{
-    padding-top: 3px;
-}
-.submit{
-    padding:5px 20px;
-    font-size:15px;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .formpage input[type="text"],
+  .formpage input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    background-color:rgb(5, 30, 173);
-    cursor:pointer;
-    margin-bottom:20px;
-}
-.submit:hover{
-    background-color: darkblue;
-}
+    font-size: 16px;
+    color: red;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .formpage input[type="text"]:focus,
+  .formpage input[type="pwd"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  
+  
+  .p1 {
+    font-size: 12px;
+    color: #007bff;
+    margin-bottom: 5px;
+  }
+  
+ 
 
+  
+  .submit {
+    
+    font-size: 12px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    color: whitesmoke;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .submit:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
