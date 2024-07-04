@@ -20,7 +20,7 @@ function FunctionalComLogin() {
         <div className="otp_loginform">
           <form onSubmit={handleSubmit}>
             <div className="otp_formpage">
-              <p class="otp_p1">To reset password enter your otp check you regiserd email</p>
+              <p className="otp_p1">To reset password enter your otp check you regiserd email</p>
               <h1 className="otp_h1">Otp verification </h1>
               
               <div className="otp_labels">
