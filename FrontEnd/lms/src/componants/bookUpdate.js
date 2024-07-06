@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './css/addNewBook.css';
+import './css/bookUpdate.css';
 import bookImage from './css/book1.jfif'; // Import the image
 
-function FunctionalComAddBook() {
+function FunctionalComUpdateBook() {
     const [book, setBook] = useState({
         title: '',
         author: '',
@@ -19,11 +19,11 @@ function FunctionalComAddBook() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Add logic to handle book submission, e.g., sending data to a server
-        console.log('Book added:', book);
-        setMessage('Book added successfully!');
-        setBook({ title: '', author: '', copies: '', status: '' }); // Reset form
+        // Add logic to handle book update, e.g., sending data to a server
+        console.log('Book updated:', book);
+        setMessage('Book updated successfully!');
+        // Optionally reset form after update
+        // setBook({ title: '', author: '', copies: '', status: '' });
     };
 
     const handleReset = () => {
@@ -32,13 +32,9 @@ function FunctionalComAddBook() {
     };
 
     return (
-        <div className="add-book-page">
-            <h1>Add New Book</h1>
-           
-            <div className = 'img'>
-            <img src={bookImage} alt="Book" className="img" /> 
-            </div> 
-
+        <div className="update-book-page">
+            <h1>Update Book</h1>
+            <img src={bookImage} alt="Book" className="book-image" />
             {message && <p className="success-message">{message}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -89,7 +85,7 @@ function FunctionalComAddBook() {
                     </select>
                 </div>
                 <div className="form-buttons">
-                    <button type="submit">Add Book</button>
+                    <button type="submit">Update Book</button>
                     <button type="button" onClick={handleReset}>Reset</button>
                 </div>
             </form>
@@ -97,4 +93,4 @@ function FunctionalComAddBook() {
     );
 }
 
-export default FunctionalComAddBook;
+export default FunctionalComUpdateBook;

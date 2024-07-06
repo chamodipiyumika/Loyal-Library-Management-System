@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './css/addNewBook.css';
-import bookImage from './css/book1.jfif'; // Import the image
+import './css/userUpdate.css';
+import userImage from './css/user1.png'; // Import the image
 
-function FunctionalComAddBook() {
-    const [book, setBook] = useState({
-        title: '',
-        author: '',
-        copies: '',
+function FunctionalComUpdateUser() {
+    const [user, setUser] = useState({
+        username: '',
+        email: '',
+        role: '',
         status: '',
     });
 
@@ -14,62 +14,58 @@ function FunctionalComAddBook() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setBook({ ...book, [name]: value });
+        setUser({ ...user, [name]: value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Add logic to handle book submission, e.g., sending data to a server
-        console.log('Book added:', book);
-        setMessage('Book added successfully!');
-        setBook({ title: '', author: '', copies: '', status: '' }); // Reset form
+        // Add logic to handle user update, e.g., sending data to a server
+        console.log('User updated:', user);
+        setMessage('User updated successfully!');
+        // Optionally reset form after update
+        // setUser({ username: '', email: '', role: '', status: '' });
     };
 
     const handleReset = () => {
-        setBook({ title: '', author: '', copies: '', status: '' });
+        setUser({ username: '', email: '', role: '', status: '' });
         setMessage('');
     };
 
     return (
-        <div className="add-book-page">
-            <h1>Add New Book</h1>
-           
-            <div className = 'img'>
-            <img src={bookImage} alt="Book" className="img" /> 
-            </div> 
-
+        <div className="update-user-page">
+            <h1>Update User</h1>
+            <img src={userImage} alt="User" className="user-image" />
             {message && <p className="success-message">{message}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="title">Title</label>
+                    <label htmlFor="username">Username</label>
                     <input
                         type="text"
-                        id="title"
-                        name="title"
-                        value={book.title}
+                        id="username"
+                        name="username"
+                        value={user.username}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="author">Author</label>
+                    <label htmlFor="email">Email</label>
                     <input
-                        type="text"
-                        id="author"
-                        name="author"
-                        value={book.author}
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={user.email}
                         onChange={handleChange}
                         required
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="copies">Copies</label>
+                    <label htmlFor="role">Role</label>
                     <input
-                        type="number"
-                        id="copies"
-                        name="copies"
-                        value={book.copies}
+                        type="text"
+                        id="role"
+                        name="role"
+                        value={user.role}
                         onChange={handleChange}
                         required
                     />
@@ -79,17 +75,17 @@ function FunctionalComAddBook() {
                     <select
                         id="status"
                         name="status"
-                        value={book.status}
+                        value={user.status}
                         onChange={handleChange}
                         required
                     >
                         <option value="">Select Status</option>
-                        <option value="Available">Available</option>
-                        <option value="Not Available">Not Available</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
                     </select>
                 </div>
                 <div className="form-buttons">
-                    <button type="submit">Add Book</button>
+                    <button type="submit">Update User</button>
                     <button type="button" onClick={handleReset}>Reset</button>
                 </div>
             </form>
@@ -97,4 +93,4 @@ function FunctionalComAddBook() {
     );
 }
 
-export default FunctionalComAddBook;
+export default FunctionalComUpdateUser;

@@ -1,11 +1,8 @@
-
-
 .lf_card-container1 {
   display: flex;
   flex-direction: column;
- 
-}
 
+}
 .lf_content-wrap {
   background-image: url('background.png');
   background-size: cover;
@@ -14,21 +11,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ecf0f1;
-  padding: 20px;
-  padding-top: 500xp;
-  flex: 1; /* Allows the content wrap to grow and push the footer down */
+  padding:10px 10px;
+  flex: 1;
+  margin:0;
 }
 
 .lf_formpage {
-  background-color: rgba(255, 255, 255, 0.85);
-  align-items: center;
+  background-color: rgba(115, 114, 116, 0.349);
   display: flex;
-  width: 350px;
-  height: 350px;
+  width: 190px;
+  height: 400px;
   flex-direction: column;
   padding: 30px;
-  padding-top: 50px;
+  margin: 5px 5px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
@@ -52,19 +47,19 @@
   text-align: left;
   width: 100%;
   margin-bottom: 10px;
-  color: #555;
+  color: #cc4545;
 }
 
 .lf_formpage input[type="text"],
 .lf_formpage input[type="password"] {
   width: calc(100% - 22px);
   padding: 10px 10px;
-  margin: 10px 0;
+  margin: 10px 10px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 1px solid #8d8888;
   border-radius: 10px;
   font-size: 16px;
-  color: red;
+  color: rgb(126, 75, 75);
   transition: border-color 0.3s ease-in-out;
 }
 
@@ -74,12 +69,11 @@
   outline: none;
 }
 
-
-
 .p1 {
   font-size: 12px;
   color: #007bff;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .p2 {
@@ -94,18 +88,18 @@
 }
 
 .submit {
-  
   font-size: 12px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
+  margin-left: 130px;
   border-radius: 10px;
   color: whitesmoke;
-  background-color: #007bff;
+  background-color: #1066c2;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .submit:hover {
-  background-color: #0056b3;
+  background-color: #053d79;
   transform: scale(1.05);
 }

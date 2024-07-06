@@ -1,104 +1,161 @@
-
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+}
 
 .card-container {
-    display: flex;
-    flex-direction: column;
-   
-  }
-  
-  .content-wrap {
-    background-image: url('background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ecf0f1;
-    
-   
-    flex: 1; /* Allows the content wrap to grow and push the footer down */
-  }
-  
-  .formpage {
-    background-color: rgba(255, 255, 255, 0.85);
-    align-items: center;
-    display: flex;
-    width: 500px;
-    height: 350px;
-    flex-direction: column;
-    padding: 1px;
-    padding-top: 1px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .formpage:hover {
-    transform: scale(1.05);
-  }
-  
-  .h1 {
-    font-family: 'Times New Roman', Times, serif;
-    margin-bottom: 1px;
-    color: #333;
-    text-align: center;
-    font-size: 24px;
-  }
-  
-  .labels {
-    font-size: 15px;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: left;
-    width: 100%;
-    margin-bottom: 10px;
-    color: #555;
-  }
-  
-  .formpage input[type="text"],
-  .formpage input[type="password"] {
-    width: calc(100% - 22px);
-    padding: 5px 5px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 10px;
-    color: red;
-    transition: border-color 0.3s ease-in-out;
-  }
-  
-  .formpage input[type="text"]:focus,
-  .formpage input[type="pwd"]:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  
-  
-  .p1 {
-    font-size: 12px;
-    color: #007bff;
-    margin-bottom: 5px;
-  }
-  
- 
+  display: flex;
+  flex-direction: column;
+  min-height: 10vh;
+}
 
-  
+.content-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 20px;
+}
+
+.form-page {
+  background: linear-gradient(to right, #b4b0af, #e9e3de);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  height: 500px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-page:hover {
+  transform: scale(1.05);
+}
+
+.h1 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-size: 28px;
+}
+
+.Label {
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.Label label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-page input[type="text"],
+.form-page input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
+  background-color: #f9f9f9;
+}
+
+.form-page input[type="text"]:focus,
+.form-page input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+.submit {
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .form-page {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .h1 {
+      font-size: 24px;
+  }
+
+  .Label {
+      font-size: 12px;
+  }
+
+  .form-page input[type="text"],
+  .form-page input[type="password"] {
+      font-size: 10px;
+  }
+
   .submit {
-    
-    font-size: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    color: whitesmoke;
-    background-color: #007bff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      font-size: 12px;
   }
-  
-  .submit:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+}
+
+/* Adding some animation */
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
   }
-  
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.form-page {
+  animation: slide-in 0.5s ease-out;
+}
+
+/* Styling the header and footer */
+
+header,
+footer {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+header h1,
+footer p {
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}

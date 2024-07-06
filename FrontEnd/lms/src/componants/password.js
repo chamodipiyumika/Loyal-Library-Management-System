@@ -1,57 +1,61 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import FunctionalComHead from './header/header';
 import FunctionalComFooter from './footer/footer';
 import './css/password.css';
 
 function FunctionalComPassword() {
-  const [password, setPassword] = useState("");
- 
-  const handleSearch = (event) => {
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The user id you entered was: ${password}`)
+    if (newPassword === confirmPassword) {
+      alert('Password updated successfully!');
+    } else {
+      alert('Passwords do not match!');
+    }
   }
 
   return (
-    <div className ="card-container">
+    <div className="password--card-container">
       <FunctionalComHead />
-     
-      <div className="loginform" >
-     
-        <form onSearch={handleSearch} >
-           <div className="restPage">
-           <div>
-            <h3>Update your password</h3>
-           </div>
+      <div className="password--content-wrap">
+        <div className="password--form">
+          <form onSubmit={handleSubmit}>
+            <div className="password--form-page">
+              <h1 className="password--heading">Update Password</h1>
 
-          <div className="labels">
-          <label>Password:
-            <input 
-              type="pw"  name="password" placeholder="Enter your password.."
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={{ display: 'block', margin: '10px 0' }}
-            />
-          </label>
+              <div className="password--labels">
+                <label>New Password:</label>
+                <input
+                  type="password"
+                  name="newPassword"
+                  placeholder="Enter your new password..."
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                />
+              </div>
 
-          <label>Confirm Password:
-            <input 
-              type="pw"  name="password" placeholder="Re-enter your password.."
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={{ display: 'block', margin: '10px 0' }}
-            />
-          </label>
-          </div>
-          </div>
-          <div class="btn">
-          <input className="submit" type="submit"/>
-         </div>
-        </form>
+              <div className="password--labels">
+                <label>Confirm Password:</label>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="Confirm your new password..."
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
+
+              <div className="btn">
+                <input className="submit" type="submit" value="Update Password" />
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-      
-
       <FunctionalComFooter />
-    </div>  
+    </div>
   );
 }
 

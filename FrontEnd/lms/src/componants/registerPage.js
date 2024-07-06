@@ -22,11 +22,11 @@ function FunctionalComReg() {
       <div className="content-wrap" >
      
         <form onSubmit={handleSubmit} >
-        <div className="formpage">
+        <div className="form-page">
           
         <h1 className ="h1">Register Page</h1>
 
-          <div className="labels">
+          <div className="Label">
           <label>Email:</label>
             <input 
               type="text"  name="email" placeholder="Enter your email.."

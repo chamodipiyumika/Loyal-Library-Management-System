@@ -3,7 +3,6 @@ import './header.css';
 import logo from './logo.png';
 
 function FunctionalComHead(){
-    console.log("hello world");
     return(
         <div className = " header ">
            <div className ="headerlogo">
