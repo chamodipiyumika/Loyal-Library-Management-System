@@ -91,6 +91,37 @@ app.post('/Login', async (req, res) => {
   console.log("login ok");
   const { email, password } = req.body;
   console.log("user type password = "+password);
+
+
+  app.post('/AddBooks', async (req, res) => {
+    console.log("dfsdfsdf");
+    const { title, author, copies, status } = req.body;
+   
+    console.log(title);
+    // Check if the user already exists
+    const existingBook = await User.findOne({ title });
+    if (existingBook) {
+      return res.status(400).json({ message: 'Book already added' });
+    }
+  
+    //add  book
+    const book = new Book({
+       title,
+       author,
+       copies,
+       bookStatus,
+    });
+  
+    try {
+      await book.save();
+      res.status(201).json({ message: 'New book adding successfully' });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
+
+
  
   // Hash the password
   const hashedPassword = await bcrypt.hash(password, 10);
