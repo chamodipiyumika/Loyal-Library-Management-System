@@ -6,7 +6,7 @@ function FunctionalComUpdateUser() {
     const [user, setUser] = useState({
         username: '',
         email: '',
-        role: '',
+        password: '',
         status: '',
     });
 
@@ -27,7 +27,7 @@ function FunctionalComUpdateUser() {
     };
 
     const handleReset = () => {
-        setUser({ username: '', email: '', role: '', status: '' });
+        setUser({ username: '', email: '', password: '', status: '' });
         setMessage('');
     };
 
@@ -60,11 +60,11 @@ function FunctionalComUpdateUser() {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="role">Role</label>
+                    <label htmlFor="role">password</label>
                     <input
                         type="text"
-                        id="role"
-                        name="role"
+                        id="password"
+                        name="password"
                         value={user.role}
                         onChange={handleChange}
                         required

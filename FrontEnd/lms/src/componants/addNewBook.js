@@ -3,33 +3,45 @@ import './css/addNewBook.css';
 import bookImage from './css/book1.jfif'; // Import the image
 
 function FunctionalComAddBook() {
-    const [book, setBook] = useState({
-        title: '',
-        author: '',
-        copies: '',
-        status: '',
-    });
+    const [title, setTitle] = useState("");
+    const [author, setAuthor] = useState("");
+    const [copies, setCopies] = useState("");
+    const [bookStatus, setStatus] = useState("");
 
-    const [message, setMessage] = useState('');
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setBook({ ...book, [name]: value });
-    };
+   const handleSubmit = async (event) => {
+    console.log("hadle");
+        event.preventDefault();
+    
+    
+       try {
+          const response = await fetch('http://localhost:4000/AddBooks', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              title,
+              author,
+              copies,
+              bookStatus,
+           
+            }),
+          });
+    
+          const data = await response.json();
+    
+          if (response.ok) {
+            alert('Book adding successfully');
+          } else {
+            alert(data.message);
+          }
+        } catch (error) {
+          alert('Error adding book');
+        }
+      };
+    
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Add logic to handle book submission, e.g., sending data to a server
-        console.log('Book added:', book);
-        setMessage('Book added successfully!');
-        setBook({ title: '', author: '', copies: '', status: '' }); // Reset form
-    };
-
-    const handleReset = () => {
-        setBook({ title: '', author: '', copies: '', status: '' });
-        setMessage('');
-    };
 
     return (
         <div className="add-book-page">
@@ -39,7 +51,7 @@ function FunctionalComAddBook() {
             <img src={bookImage} alt="Book" className="img" /> 
             </div> 
 
-            {message && <p className="success-message">{message}</p>}
+           
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="title">Title</label>
@@ -47,9 +59,8 @@ function FunctionalComAddBook() {
                         type="text"
                         id="title"
                         name="title"
-                        value={book.title}
-                        onChange={handleChange}
-                        required
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
@@ -58,9 +69,8 @@ function FunctionalComAddBook() {
                         type="text"
                         id="author"
                         name="author"
-                        value={book.author}
-                        onChange={handleChange}
-                        required
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
@@ -69,9 +79,8 @@ function FunctionalComAddBook() {
                         type="number"
                         id="copies"
                         name="copies"
-                        value={book.copies}
-                        onChange={handleChange}
-                        required
+                        value={copies}
+                        onChange={(e) => setCopies(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
@@ -79,18 +88,17 @@ function FunctionalComAddBook() {
                     <select
                         id="status"
                         name="status"
-                        value={book.status}
-                        onChange={handleChange}
-                        required
+                        value={bookStatus}
+                        onChange={(e) => setStatus(e.target.value)}
                     >
                         <option value="">Select Status</option>
-                        <option value="Available">Available</option>
-                        <option value="Not Available">Not Available</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Not Available</option>
                     </select>
                 </div>
                 <div className="form-buttons">
                     <button type="submit">Add Book</button>
-                    <button type="button" onClick={handleReset}>Reset</button>
+                    <button type="button">Reset</button>
                 </div>
             </form>
         </div>

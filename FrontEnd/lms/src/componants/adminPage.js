@@ -1,106 +1,82 @@
-import React, { useState } from 'react';
-import './css/adminPage.css';
+import React from 'react';
+import {Link} from "react-router-dom";
+import './css/adminPage.css'; // Import your CSS file for styling
 
 function FunctionalComAdmin() {
-    // Initial book details
-    const booksData = [
-        { title: 'Harry Potter', author: 'J.K. Rowling', copies: 8, status: 'Available' },
-    ];
+  return (
+    <div className="admin-container">
+      <div className="table-container">
+        <h2>Books Details</h2>
+        <table>
+          <thead className="head">
+            <tr>
+              <th>Book ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Book Title 1</td>
+              <td>Author 1</td>
+              <td className="button">
+                <button className="btn-success">{ <Link to="/updateBook">Update</Link> }</button>
+                <button className="btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Book Title 2</td>
+              <td>Author 2</td>
+              <td className="button">
+                <button className="btn-success">{ <Link to="/updateBook">Update</Link> }</button>
+                <button className="btn-danger">Delete</button>
+              </td>
+            </tr>
+            {/* Add more rows as needed */}
+          </tbody>
+        </table>
+        <button className="btn-add">{ <Link to="/updateUser">Add Book</Link> }</button>
+      </div>
 
-    const [books] = useState(booksData);
-    const [searchTerm, setSearchTerm] = useState('');
-
-    // Initial user details
-    const userData = [
-        { userid: 'AB123', bookname: 'Harry Potter', issuedate: '6/6/2024', submitdate: '16/6/2024', payment: 40 },
-    ];
-
-    const [users] = useState(userData);
-    const [searchUser, setSearchUser] = useState('');
-
-    const filteredBooks = books.filter((book) =>
-        book.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    const filteredUsers = users.filter((user) =>
-        user.userid.toLowerCase().includes(searchUser.toLowerCase())
-    );
-
-    return (
-        <div className="admin-page">
-            <div className="table-container">
-                <div className="table-wrapper">
-                    {/* Book Data Table */}
-                    <h1>Books Details</h1>
-                    <button2 className="add">Add Book</button2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Copies</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {filteredBooks.map((book) => (
-                                <tr key={book.title}>
-                                    <td>{book.title}</td>
-                                    <td>{book.author}</td>
-                                    <td>{book.copies}</td>
-                                    <td>{book.status}</td>
-                                    <td>
-                                        <button2 className="del">Delete</button2>
-                                        <button2 className="up">Update</button2>
-                                       
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                  
-                </div>
-                <div className="table-wrapper">
-                    {/* User Data Table */}
-                    <h1>User Details</h1>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>UserId</th>
-                                <th>Book Name</th>
-                                <th>Issue Date</th>
-                                <th>Submit Date</th>
-                                <th>Payment</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {filteredUsers.map((user) => (
-                                <tr key={user.userid}>
-                                    <td>{user.userid}</td>
-                                    <td>{user.bookname}</td>
-                                    <td>{user.issuedate}</td>
-                                    <td>{user.submitdate}</td>
-                                    <td>{user.payment}</td>
-                                    <td>
-                                        <button2 className="del">Delete</button2>
-                                        <button2 className="up">Update</button2>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <div className="form-wrapper">
-
-                    </div>  
-                    <div className="form-wrapper">
-                        
-                        </div> 
-                </div>
-            </div>
-        </div>
-    );
+      <div className="table-container">
+        <h2>Users Details</h2>
+        <table>
+          <thead className="head">
+            <tr>
+              <th>User ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>User 1</td>
+              <td>user1@example.com</td>
+              <td className="button">
+                <button className="btn-success">{ <Link to="/updateUser">Update</Link> }</button>
+                <button className="btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>User 2</td>
+              <td>user2@example.com</td>
+              <td className="button">
+                <button className="btn-success">{ <Link to="/updateUser">Update</Link> }</button>
+                <button className="btn-danger">Delete</button>
+              </td>
+            </tr>
+            {/* Add more rows as needed */}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
 
 export default FunctionalComAdmin;

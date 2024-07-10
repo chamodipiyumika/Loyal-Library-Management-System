@@ -9,6 +9,35 @@ function FunctionalComLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+
+    try {
+      const response = await fetch('http://localhost:4000/Login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+       
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert('Re direct to home page');
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      alert('Error');
+    }
+  };
+
   return (
     
     <div className="container">
@@ -21,7 +50,8 @@ function FunctionalComLogin() {
 
           <div className="lf_content-wrap">
             <div className="lf_loginform">
-              <form>
+
+              <form onSubmit={handleSubmit}>
                 <div className="lf_formpage">
                   <h1 className="lf_h1">Login Page</h1>
                   <div className="lf_labels">
@@ -46,7 +76,7 @@ function FunctionalComLogin() {
                     { <Link to="/restore-password">Forgot password</Link> }
                   </div>
                   <div className="p2">
-                    { <p>Don't have an account? <span><pre><Link to="/goto-register">Click here to register</Link></pre></span></p> }
+                    { <p>Don't have an account? <span><Link to="/goto-register">Click here to register</Link></span></p> }
                   </div>
                   <div className="btn">
                     <input className="submit" type="submit" />
