@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/bookPage.css';
 import searchIcon from './css/search.webp'; // Ensure this path is correct
 
 function FunctionalComBook() {
-    const booksData = [
-        { id: 1, title: 'Will in the World', author: 'Stephen Greenblatt', copies: 10, status: 'Available' },
-        { id: 2, title: 'Advanced Maths', author: 'Stanley J Farlow', copies: 4, status: 'Available' },
-        { id: 3, title: 'The Boat that Won the War', author: 'Charles C Roberts Jr', copies: 6, status: 'Not Available' },
-        { id: 4, title: 'Harry Potter', author: 'J.K. Rowling', copies: 8, status: 'Available' },
-        { id: 5, title: 'In the Hour of Victory', author: 'Sam Wills', copies: 3, status: 'Available' },
-        { id: 6, title: 'The Boat that Won the War', author: 'Charles C Roberts Jr', copies: 6, status: 'Not Available' },
-    ];
-
+    const [books, setBooks] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+
+    useEffect(() => {
+        fetch('http://localhost:3000/books')
+            .then(response => response.json())
+            .then(data => setBooks(data))
+            .catch(error => console.error('Error fetching books:', error));
+    }, []);
 
     const handleSearch = (event) => {
         setSearchTerm(event.target.value);
     };
 
-    const filteredBooks = booksData.filter((book) =>
+    const filteredBooks = books.filter((book) =>
         book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -47,8 +46,8 @@ function FunctionalComBook() {
                 </thead>
                 <tbody>
                     {filteredBooks.map((book) => (
-                        <tr key={book.id}>
-                            <td>{book.id}</td>
+                        <tr key={book._id}>
+                            <td>{book._id}</td>
                             <td>{book.title}</td>
                             <td>{book.author}</td>
                             <td>{book.copies}</td>
