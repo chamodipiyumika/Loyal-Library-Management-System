@@ -130,7 +130,7 @@ app.post('/AddBooks', async (req, res) => {
  
   console.log(title);
   // Check if the user already exists
-  const existingBook = await User.findOne({ title });
+  const existingBook = await Book.findOne({ title });
   if (existingBook) {
     return res.status(400).json({ message: 'Book already added' });
   }
