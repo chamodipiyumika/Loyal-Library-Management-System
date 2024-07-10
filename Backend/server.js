@@ -172,13 +172,12 @@ app.post('/verify-otp', async (req, res) => {
 });
 
 // Add book route
-app.post('/books', async (req, res) => {
+app.get('/books', async (req, res) => {
   try {
-    const book = new Book(req.body);
-    await book.save();
-    res.status(201).send(book);
+    const books = await Book.find({});  
+    res.status(200).json(books);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 

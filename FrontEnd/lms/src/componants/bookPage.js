@@ -7,7 +7,7 @@ function FunctionalComBook() {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:3000/books')
+        fetch('http://localhost:4000/books')
             .then(response => response.json())
             .then(data => setBooks(data))
             .catch(error => console.error('Error fetching books:', error));
@@ -45,9 +45,9 @@ function FunctionalComBook() {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredBooks.map((book) => (
+                    {filteredBooks.map((book, index) => (
                         <tr key={book._id}>
-                            <td>{book._id}</td>
+                            <td>{index + 1}</td>
                             <td>{book.title}</td>
                             <td>{book.author}</td>
                             <td>{book.copies}</td>
