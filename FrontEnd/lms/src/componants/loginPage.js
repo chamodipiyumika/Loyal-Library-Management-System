@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import FunctionalComHead from './header/header.js';
 import FunctionalComFooter from './footer/footer.js';
 import './css/loginpage.css';
@@ -8,6 +8,7 @@ import './css/loginpage.css';
 function FunctionalComLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,7 +30,7 @@ function FunctionalComLogin() {
       const data = await response.json();
 
       if (response.ok) {
-        alert('Re direct to home page');
+        navigate('/bookpage'); 
       } else {
         alert(data.message);
       }
