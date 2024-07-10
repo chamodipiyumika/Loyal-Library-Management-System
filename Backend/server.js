@@ -93,34 +93,7 @@ app.post('/Login', async (req, res) => {
   console.log("user type password = "+password);
 
 
-  app.post('/AddBooks', async (req, res) => {
-    console.log("dfsdfsdf");
-    const { title, author, copies, status } = req.body;
-   
-    console.log(title);
-    // Check if the user already exists
-    const existingBook = await User.findOne({ title });
-    if (existingBook) {
-      return res.status(400).json({ message: 'Book already added' });
-    }
   
-    //add  book
-    const book = new Book({
-       title,
-       author,
-       copies,
-       bookStatus,
-    });
-  
-    try {
-      await book.save();
-      res.status(201).json({ message: 'New book adding successfully' });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: 'Server error' });
-    }
-  });
-
 
  
   // Hash the password
@@ -147,7 +120,39 @@ app.post('/Login', async (req, res) => {
 });
 
 
+
+
 // Example route to a book
+
+app.post('/AddBooks', async (req, res) => {
+  console.log("dfsdfsdf");
+  const { title, author, copies, status } = req.body;
+ 
+  console.log(title);
+  // Check if the user already exists
+  const existingBook = await Book.findOne({ title });
+  if (existingBook) {
+    return res.status(400).json({ message: 'Book already added' });
+  }
+
+  //add  book
+  const book = new Book({
+     title,
+     author,
+     copies,
+     status,
+  });
+
+  try {
+    await book.save();
+    res.status(201).json({ message: 'New book adding successfully' });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
 // Verify OTP route
 app.post('/verify-otp', async (req, res) => {
   const { otp } = req.body;

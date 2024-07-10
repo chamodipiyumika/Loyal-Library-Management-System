@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './css/addNewBook.css';
 import bookImage from './css/book1.jfif'; // Import the image
 
@@ -6,52 +7,47 @@ function FunctionalComAddBook() {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [copies, setCopies] = useState("");
-    const [bookStatus, setStatus] = useState("");
+    const [status, setStatus] = useState("");
+    const navigate = useNavigate(); // Initialize useNavigate
 
-
-   const handleSubmit = async (event) => {
-    console.log("hadle");
+    const handleSubmit = async (event) => {
         event.preventDefault();
-    
-    
-       try {
-          const response = await fetch('http://localhost:4000/AddBooks', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              title,
-              author,
-              copies,
-              bookStatus,
-           
-            }),
-          });
-    
-          const data = await response.json();
-    
-          if (response.ok) {
-            alert('Book adding successfully');
-          } else {
-            alert(data.message);
-          }
-        } catch (error) {
-          alert('Error adding book');
-        }
-      };
-    
 
+        try {
+            const response = await fetch('http://localhost:4000/AddBooks', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    title,
+                    author,
+                    copies,
+                    status,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('Book added successfully');
+                navigate('/bookpage'); 
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            alert('Error adding book');
+        }
+    };
 
     return (
         <div className="add-book-page">
             <h1>Add New Book</h1>
-           
-            <div className = 'img'>
-            <img src={bookImage} alt="Book" className="img" /> 
-            </div> 
 
-           
+            <div className='img'>
+                <img src={bookImage} alt="Book" className="img" />
+            </div>
+
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="title">Title</label>
@@ -88,7 +84,7 @@ function FunctionalComAddBook() {
                     <select
                         id="status"
                         name="status"
-                        value={bookStatus}
+                        value={status}
                         onChange={(e) => setStatus(e.target.value)}
                     >
                         <option value="">Select Status</option>
@@ -98,7 +94,12 @@ function FunctionalComAddBook() {
                 </div>
                 <div className="form-buttons">
                     <button type="submit">Add Book</button>
-                    <button type="button">Reset</button>
+                    <button type="button" onClick={() => {
+                        setTitle("");
+                        setAuthor("");
+                        setCopies("");
+                        setStatus("");
+                    }}>Reset</button>
                 </div>
             </form>
         </div>
